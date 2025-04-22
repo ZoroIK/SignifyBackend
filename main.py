@@ -15,7 +15,7 @@ app = FastAPI()
 # ✅ CORS Middleware for React frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Update if deployed
+    allow_origins=["*"],  # Update if deployed
     allow_credentials=True,
     allow_methods=["POST"],
     allow_headers=["*"],
@@ -85,6 +85,6 @@ async def predict(data: LandmarkData):
         raise HTTPException(status_code=500, detail=f"Prediction Error: {str(e)}")
 
 # ▶ Run locally
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=5000)
+#if __name__ == "__main__":
+ #   import uvicorn
+  #  uvicorn.run(app, host="127.0.0.1", port=5000)
